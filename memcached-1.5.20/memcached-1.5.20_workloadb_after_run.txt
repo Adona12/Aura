@@ -1,0 +1,64 @@
+[WARN]  Running against a source checkout. In order to get our runtime dependencies we'll have to invoke Maven. Depending on the state of your system, this may take ~30-45 seconds
+[DEBUG]  Running 'mvn -pl site.ycsb:memcached-binding -am package -DskipTests dependency:build-classpath -DincludeScope=compile -Dmdep.outputFilterFile=true'
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (file:/usr/share/maven/lib/guice.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+java -cp /proj/proxyweb-PG0/adona/YCSB/memcached/conf:/proj/proxyweb-PG0/adona/YCSB/memcached/target/memcached-binding-0.18.0-SNAPSHOT.jar:/root/.m2/repository/org/apache/htrace/htrace-core4/4.1.0-incubating/htrace-core4-4.1.0-incubating.jar:/root/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.4/HdrHistogram-2.1.4.jar:/root/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/root/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar:/root/.m2/repository/net/spy/spymemcached/2.11.4/spymemcached-2.11.4.jar:/root/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.4/jackson-core-asl-1.9.4.jar:/proj/proxyweb-PG0/adona/YCSB/core/target/core-0.18.0-SNAPSHOT.jar site.ycsb.Client -db site.ycsb.db.MemcachedClient -s -P /proj/proxyweb-PG0/adona/YCSB/workloads/workloadb -p memcached.hosts=127.0.0.1 -t
+Command line: -db site.ycsb.db.MemcachedClient -s -P /proj/proxyweb-PG0/adona/YCSB/workloads/workloadb -p memcached.hosts=127.0.0.1 -t
+YCSB Client 0.18.0-SNAPSHOT
+
+Loading workload...
+log4j:WARN No appenders could be found for logger (org.apache.htrace.core.Tracer).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Starting test.
+2021-08-07 08:05:26:550 0 sec: 0 operations; est completion in 0 second 
+2021-08-07 08:05:26.623 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2021-08-07 08:05:27.110 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-07 08:05:27:111 0 sec: 1000 operations; 1776.2 current ops/sec; [READ: Count=945, Max=35455, Min=186, Avg=392.68, 90=568, 99=1106, 99.9=1281, 99.99=35455] [CLEANUP: Count=1, Max=4375, Min=4372, Avg=4374, 90=4375, 99=4375, 99.9=4375, 99.99=4375] [UPDATE: Count=55, Max=35295, Min=301, Avg=1200.04, 90=836, 99=1183, 99.9=35295, 99.99=35295] 
+[OVERALL], RunTime(ms), 563
+[OVERALL], Throughput(ops/sec), 1776.1989342806394
+[TOTAL_GCS_G1_Young_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.0
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 0
+[TOTAL_GC_TIME], Time(ms), 0
+[TOTAL_GC_TIME_%], Time(%), 0.0
+[READ], Operations, 945
+[READ], AverageLatency(us), 392.6783068783069
+[READ], MinLatency(us), 186
+[READ], MaxLatency(us), 35455
+[READ], 95thPercentileLatency(us), 757
+[READ], 99thPercentileLatency(us), 1106
+[READ], Return=OK, 945
+[CLEANUP], Operations, 1
+[CLEANUP], AverageLatency(us), 4374.0
+[CLEANUP], MinLatency(us), 4372
+[CLEANUP], MaxLatency(us), 4375
+[CLEANUP], 95thPercentileLatency(us), 4375
+[CLEANUP], 99thPercentileLatency(us), 4375
+[UPDATE], Operations, 55
+[UPDATE], AverageLatency(us), 1200.0363636363636
+[UPDATE], MinLatency(us), 301
+[UPDATE], MaxLatency(us), 35295
+[UPDATE], 95thPercentileLatency(us), 973
+[UPDATE], 99thPercentileLatency(us), 1183
+[UPDATE], Return=OK, 55
+
+ Performance counter stats for './bin/ycsb run memcached -s -P /proj/proxyweb-PG0/adona/YCSB/workloads/workloadb -p memcached.hosts=127.0.0.1':
+
+   134,875,184,452      cycles                                                        (66.75%)
+    30,000,407,431      branches                                                      (66.78%)
+     1,071,947,341      branch-misses             #    3.57% of all branches          (66.58%)
+    29,893,683,042      branch-loads                                                  (66.71%)
+     1,075,363,459      branch-load-misses                                            (66.67%)
+     1,021,613,656      L1-icache-load-misses                                         (66.50%)
+
+      12.847066479 seconds time elapsed
+

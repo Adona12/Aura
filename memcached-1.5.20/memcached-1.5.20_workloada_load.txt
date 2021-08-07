@@ -1,0 +1,57 @@
+[WARN]  Running against a source checkout. In order to get our runtime dependencies we'll have to invoke Maven. Depending on the state of your system, this may take ~30-45 seconds
+[DEBUG]  Running 'mvn -pl site.ycsb:memcached-binding -am package -DskipTests dependency:build-classpath -DincludeScope=compile -Dmdep.outputFilterFile=true'
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (file:/usr/share/maven/lib/guice.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+java -cp /proj/proxyweb-PG0/adona/YCSB/memcached/conf:/proj/proxyweb-PG0/adona/YCSB/memcached/target/memcached-binding-0.18.0-SNAPSHOT.jar:/root/.m2/repository/org/apache/htrace/htrace-core4/4.1.0-incubating/htrace-core4-4.1.0-incubating.jar:/root/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.4/HdrHistogram-2.1.4.jar:/root/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/root/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar:/root/.m2/repository/net/spy/spymemcached/2.11.4/spymemcached-2.11.4.jar:/root/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.4/jackson-core-asl-1.9.4.jar:/proj/proxyweb-PG0/adona/YCSB/core/target/core-0.18.0-SNAPSHOT.jar site.ycsb.Client -db site.ycsb.db.MemcachedClient -s -P /proj/proxyweb-PG0/adona/YCSB/workloads/workloada -p memcached.hosts=127.0.0.1 -load
+Command line: -db site.ycsb.db.MemcachedClient -s -P /proj/proxyweb-PG0/adona/YCSB/workloads/workloada -p memcached.hosts=127.0.0.1 -load
+YCSB Client 0.18.0-SNAPSHOT
+
+Loading workload...
+log4j:WARN No appenders could be found for logger (org.apache.htrace.core.Tracer).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Starting test.
+2021-08-07 07:48:47:377 0 sec: 0 operations; est completion in 0 second 
+2021-08-07 07:48:47.450 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2021-08-07 07:48:47.931 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-07 07:48:47:933 0 sec: 1000 operations; 1795.33 current ops/sec; [CLEANUP: Count=1, Max=4195, Min=4192, Avg=4194, 90=4195, 99=4195, 99.9=4195, 99.99=4195] [INSERT: Count=1000, Max=57215, Min=202, Avg=431.42, 90=590, 99=1325, 99.9=2213, 99.99=57215] 
+[OVERALL], RunTime(ms), 557
+[OVERALL], Throughput(ops/sec), 1795.3321364452424
+[TOTAL_GCS_G1_Young_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.0
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 0
+[TOTAL_GC_TIME], Time(ms), 0
+[TOTAL_GC_TIME_%], Time(%), 0.0
+[CLEANUP], Operations, 1
+[CLEANUP], AverageLatency(us), 4194.0
+[CLEANUP], MinLatency(us), 4192
+[CLEANUP], MaxLatency(us), 4195
+[CLEANUP], 95thPercentileLatency(us), 4195
+[CLEANUP], 99thPercentileLatency(us), 4195
+[INSERT], Operations, 1000
+[INSERT], AverageLatency(us), 431.421
+[INSERT], MinLatency(us), 202
+[INSERT], MaxLatency(us), 57215
+[INSERT], 95thPercentileLatency(us), 726
+[INSERT], 99thPercentileLatency(us), 1325
+[INSERT], Return=OK, 1000
+
+ Performance counter stats for './bin/ycsb load memcached -s -P /proj/proxyweb-PG0/adona/YCSB/workloads/workloada -p memcached.hosts=127.0.0.1':
+
+   128,731,461,430      cycles                                                        (66.95%)
+    28,140,564,740      branches                                                      (66.85%)
+     1,044,494,239      branch-misses             #    3.71% of all branches          (66.51%)
+    28,414,050,822      branch-loads                                                  (66.42%)
+     1,045,187,536      branch-load-misses                                            (66.55%)
+     1,015,577,824      L1-icache-load-misses                                         (66.73%)
+
+      12.828191312 seconds time elapsed
+
