@@ -1,0 +1,73 @@
+[WARN]  Running against a source checkout. In order to get our runtime dependencies we'll have to invoke Maven. Depending on the state of your system, this may take ~30-45 seconds
+[DEBUG]  Running 'mvn -pl site.ycsb:memcached-binding -am package -DskipTests dependency:build-classpath -DincludeScope=compile -Dmdep.outputFilterFile=true'
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (file:/usr/share/maven/lib/guice.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+java -cp /proj/proxyweb-PG0/adona/YCSB/memcached/conf:/proj/proxyweb-PG0/adona/YCSB/memcached/target/memcached-binding-0.18.0-SNAPSHOT.jar:/root/.m2/repository/org/apache/htrace/htrace-core4/4.1.0-incubating/htrace-core4-4.1.0-incubating.jar:/root/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.4/HdrHistogram-2.1.4.jar:/root/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/root/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar:/root/.m2/repository/net/spy/spymemcached/2.11.4/spymemcached-2.11.4.jar:/root/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.4/jackson-core-asl-1.9.4.jar:/proj/proxyweb-PG0/adona/YCSB/core/target/core-0.18.0-SNAPSHOT.jar site.ycsb.Client -db site.ycsb.db.MemcachedClient -threads 4 -s -P workloads/workloadf -p memcached.hosts=localhost:11211 -load
+Command line: -db site.ycsb.db.MemcachedClient -threads 4 -s -P workloads/workloadf -p memcached.hosts=localhost:11211 -load
+YCSB Client 0.18.0-SNAPSHOT
+
+Loading workload...
+log4j:WARN No appenders could be found for logger (org.apache.htrace.core.Tracer).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Starting test.
+2021-08-11 15:15:00:333 0 sec: 0 operations; est completion in 0 second 
+2021-08-11 15:15:00.414 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=localhost/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2021-08-11 15:15:00.414 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=localhost/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2021-08-11 15:15:00.414 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=localhost/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2021-08-11 15:15:00.415 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=localhost/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+2021-08-11 15:15:00.508 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-11 15:15:00.508 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-11 15:15:00.509 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-11 15:15:00.510 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-11 15:15:00:512 0 sec: 0 operations; est completion in 106751991167300 days 15 hours [CLEANUP: Count=4, Max=5495, Min=3008, Avg=3960, 90=5495, 99=5495, 99.9=5495, 99.99=5495] [INSERT: Count=0, Max=0, Min=9223372036854775807, Avg=NaN, 90=0, 99=0, 99.9=0, 99.99=0] [INSERT-FAILED: Count=4, Max=69503, Min=69440, Avg=69472, 90=69503, 99=69503, 99.9=69503, 99.99=69503] 
+[OVERALL], RunTime(ms), 181
+[OVERALL], Throughput(ops/sec), 0.0
+[TOTAL_GCS_G1_Young_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.0
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 0
+[TOTAL_GC_TIME], Time(ms), 0
+[TOTAL_GC_TIME_%], Time(%), 0.0
+[CLEANUP], Operations, 4
+[CLEANUP], AverageLatency(us), 3960.0
+[CLEANUP], MinLatency(us), 3008
+[CLEANUP], MaxLatency(us), 5495
+[CLEANUP], 95thPercentileLatency(us), 5495
+[CLEANUP], 99thPercentileLatency(us), 5495
+[INSERT], Operations, 0
+[INSERT], AverageLatency(us), NaN
+[INSERT], MinLatency(us), 9223372036854775807
+[INSERT], MaxLatency(us), 0
+[INSERT], 95thPercentileLatency(us), 0
+[INSERT], 99thPercentileLatency(us), 0
+[INSERT], Return=ERROR, 4
+[INSERT-FAILED], Operations, 4
+[INSERT-FAILED], AverageLatency(us), 69472.0
+[INSERT-FAILED], MinLatency(us), 69440
+[INSERT-FAILED], MaxLatency(us), 69503
+[INSERT-FAILED], 95thPercentileLatency(us), 69503
+[INSERT-FAILED], 99thPercentileLatency(us), 69503
+
+ Performance counter stats for 'system wide':
+
+        3560805477      cycles                                                        (66.66%)
+         353963847      branches                                                      (66.66%)
+          17220304      branch-misses             #    4.86% of all branches          (66.66%)
+         347953549      branch-loads                                                  (66.66%)
+          16284595      branch-load-misses                                            (66.68%)
+          31447626      L1-icache-load-misses                                         (66.68%)
+
+      12.022417750 seconds time elapsed
+
