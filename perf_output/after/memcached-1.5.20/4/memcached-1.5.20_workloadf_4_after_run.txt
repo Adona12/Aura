@@ -1,0 +1,76 @@
+[WARN]  Running against a source checkout. In order to get our runtime dependencies we'll have to invoke Maven. Depending on the state of your system, this may take ~30-45 seconds
+[DEBUG]  Running 'mvn -pl site.ycsb:memcached-binding -am package -DskipTests dependency:build-classpath -DincludeScope=compile -Dmdep.outputFilterFile=true'
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (file:/usr/share/maven/lib/guice.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+java -cp /proj/proxyweb-PG0/adona/YCSB/memcached/conf:/proj/proxyweb-PG0/adona/YCSB/memcached/target/memcached-binding-0.18.0-SNAPSHOT.jar:/root/.m2/repository/org/apache/htrace/htrace-core4/4.1.0-incubating/htrace-core4-4.1.0-incubating.jar:/root/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.4/HdrHistogram-2.1.4.jar:/root/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/root/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar:/root/.m2/repository/net/spy/spymemcached/2.11.4/spymemcached-2.11.4.jar:/root/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.4/jackson-core-asl-1.9.4.jar:/proj/proxyweb-PG0/adona/YCSB/core/target/core-0.18.0-SNAPSHOT.jar site.ycsb.Client -db site.ycsb.db.MemcachedClient -threads 4 -s -P workloads/workloadf -p memcached.hosts=localhost:11211 -t
+Command line: -db site.ycsb.db.MemcachedClient -threads 4 -s -P workloads/workloadf -p memcached.hosts=localhost:11211 -t
+YCSB Client 0.18.0-SNAPSHOT
+
+Loading workload...
+log4j:WARN No appenders could be found for logger (org.apache.htrace.core.Tracer).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Starting test.
+2021-08-11 17:11:38:235 0 sec: 0 operations; est completion in 0 second 
+2021-08-11 17:11:38.317 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=localhost/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2021-08-11 17:11:38.317 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=localhost/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2021-08-11 17:11:38.317 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=localhost/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2021-08-11 17:11:38.318 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=localhost/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2021-08-11 17:11:38.583 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-11 17:11:38.583 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-11 17:11:38.585 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-11 17:11:38.587 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-11 17:11:38:587 0 sec: 1000 operations; 2824.86 current ops/sec; [READ: Count=1000, Max=36607, Min=203, Avg=536.14, 90=597, 99=1641, 99.9=36575, 99.99=36607] [READ-MODIFY-WRITE: Count=516, Max=99519, Min=457, Avg=1595.82, 90=1265, 99=3125, 99.9=99519, 99.99=99519] [CLEANUP: Count=4, Max=4061, Min=1006, Avg=2193.5, 90=4061, 99=4061, 99.9=4061, 99.99=4061] [UPDATE: Count=516, Max=47263, Min=226, Avg=766.97, 90=646, 99=1715, 99.9=46719, 99.99=47263] 
+[OVERALL], RunTime(ms), 354
+[OVERALL], Throughput(ops/sec), 2824.858757062147
+[TOTAL_GCS_G1_Young_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.0
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 0
+[TOTAL_GC_TIME], Time(ms), 0
+[TOTAL_GC_TIME_%], Time(%), 0.0
+[READ], Operations, 1000
+[READ], AverageLatency(us), 536.142
+[READ], MinLatency(us), 203
+[READ], MaxLatency(us), 36607
+[READ], 95thPercentileLatency(us), 953
+[READ], 99thPercentileLatency(us), 1641
+[READ], Return=OK, 1000
+[READ-MODIFY-WRITE], Operations, 516
+[READ-MODIFY-WRITE], AverageLatency(us), 1595.8178294573643
+[READ-MODIFY-WRITE], MinLatency(us), 457
+[READ-MODIFY-WRITE], MaxLatency(us), 99519
+[READ-MODIFY-WRITE], 95thPercentileLatency(us), 1898
+[READ-MODIFY-WRITE], 99thPercentileLatency(us), 3125
+[CLEANUP], Operations, 4
+[CLEANUP], AverageLatency(us), 2193.5
+[CLEANUP], MinLatency(us), 1006
+[CLEANUP], MaxLatency(us), 4061
+[CLEANUP], 95thPercentileLatency(us), 4061
+[CLEANUP], 99thPercentileLatency(us), 4061
+[UPDATE], Operations, 516
+[UPDATE], AverageLatency(us), 766.9670542635658
+[UPDATE], MinLatency(us), 226
+[UPDATE], MaxLatency(us), 47263
+[UPDATE], 95thPercentileLatency(us), 963
+[UPDATE], 99thPercentileLatency(us), 1715
+[UPDATE], Return=OK, 516
+
+ Performance counter stats for 'system wide':
+
+       14934525228      cycles                                                        (66.63%)
+        3464209011      branches                                                      (66.66%)
+         118240098      branch-misses             #    3.41% of all branches          (66.69%)
+        3507314443      branch-loads                                                  (66.69%)
+         123609498      branch-load-misses                                            (66.68%)
+          69695930      L1-icache-load-misses                                         (66.65%)
+
+      12.682320764 seconds time elapsed
+
