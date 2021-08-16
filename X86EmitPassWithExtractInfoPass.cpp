@@ -138,7 +138,9 @@ public:
           instructions += elem.first;
           bb += elem.second;
         }
-        fouts <<"avg"<<", "<<(instructions/bb)<<"\n";
+        instructionBB = instructions/bb;
+        fouts <<"avg"<<", "<<instructionBB<<"\n";
+        
         fouts.close();
       }
       OutputFilename = EmitPassWithExtractInfoPath + "/summaryStorePerBBHistogram.csv";
@@ -154,7 +156,10 @@ public:
           store += elem.first;
           bb += elem.second;
         }
-        fouts <<"avg"<<", "<<(store/bb)<<"\n";
+        float avg = store/bb;
+        fouts <<"avg"<<", "<<avg<<"\n";
+        float perc = (avg * 100)/instructionBB;
+        fouts <<"perc"<<", "<<perc<<"\n";
         fouts.close();
       }
       OutputFilename = EmitPassWithExtractInfoPath + "/summaryLoadPerBBHistogram.csv";
@@ -171,7 +176,10 @@ public:
         load += elem.first;
           bb += elem.second;
         }
-        fouts <<"avg"<<", "<<(load/bb)<<"\n";
+         float avg = load/bb;
+        fouts <<"avg"<<", "<<avg<<"\n";
+        float perc = (avg * 100)/instructionBB;
+        fouts <<"perc"<<", "<<perc<<"\n";
         fouts.close();
       }
       OutputFilename = EmitPassWithExtractInfoPath + "/summaryOtherPerBBHistogram.csv";
@@ -187,39 +195,10 @@ public:
           other += elem.first;
           bb += elem.second;
         }
-        fouts <<"avg"<<", "<<(other/bb)<<"\n";
-        fouts.close();
-      }
-      OutputFilename = EmitPassWithExtractInfoPath + "/summaryStorePerFunctionHistogram.csv";
-      outs() << "Writing to " << OutputFilename << "\n";
-      fouts.open(OutputFilename.c_str());
-      if (!fouts.is_open()) {
-        outs() << "Bad path\n";
-      } else {
-        float store = 0;
-        float function = 0;
-        for (auto &elem : GlobalstorePerFunctionHistogram) {
-          fouts << elem.first << ", " << elem.second << "\n";
-          store += elem.first;
-          function += elem.second;
-        }
-        fouts <<"avg"<<", "<<(store/function)<<"\n";
-        fouts.close();
-      }
-      OutputFilename = EmitPassWithExtractInfoPath + "/summaryLoadPerFunctionHistogram.csv";
-      outs() << "Writing to " << OutputFilename << "\n";
-      fouts.open(OutputFilename.c_str());
-      if (!fouts.is_open()) {
-        outs() << "Bad path\n";
-      } else {
-        float load = 0;
-        float function = 0;
-        for (auto &elem : GloballoadPerFunctionHistogram) {
-          load += elem.first;
-          function += elem.second;
-          fouts << elem.first << ", " << elem.second << "\n";
-        }
-        fouts <<"avg"<<", "<<(load/function)<<"\n";
+          float avg = other/bb;
+        fouts <<"avg"<<", "<<avg<<"\n";
+        float perc = (avg * 100)/instructionBB;
+        fouts <<"perc"<<", "<<perc<<"\n";
         fouts.close();
       }
       OutputFilename = EmitPassWithExtractInfoPath + "/summaryInstructionsPerFunctionHistogram.csv";
@@ -235,9 +214,51 @@ public:
           function += elem.second;
           fouts << elem.first << ", " << elem.second << "\n";
         }
-        fouts <<"avg"<<", "<<(instructions/function)<<"\n";
+        instructionF = (instructions/function);
+        fouts <<"avg"<<", "<<instructionF<<"\n";
         fouts.close();
       }
+      OutputFilename = EmitPassWithExtractInfoPath + "/summaryStorePerFunctionHistogram.csv";
+      outs() << "Writing to " << OutputFilename << "\n";
+      fouts.open(OutputFilename.c_str());
+      if (!fouts.is_open()) {
+        outs() << "Bad path\n";
+      } else {
+        float store = 0;
+        float function = 0;
+        for (auto &elem : GlobalstorePerFunctionHistogram) {
+          fouts << elem.first << ", " << elem.second << "\n";
+          store += elem.first;
+          function += elem.second;
+        }
+        float avg = store/function;
+
+        fouts <<"avg"<<", "<<avg<<"\n";
+        float perc = (avg * 100)/instructionF;
+        fouts <<"perc"<<", "<<perc<<"\n";
+        fouts.close();
+      }
+      OutputFilename = EmitPassWithExtractInfoPath + "/summaryLoadPerFunctionHistogram.csv";
+      outs() << "Writing to " << OutputFilename << "\n";
+      fouts.open(OutputFilename.c_str());
+      if (!fouts.is_open()) {
+        outs() << "Bad path\n";
+      } else {
+        float load = 0;
+        float function = 0;
+        for (auto &elem : GloballoadPerFunctionHistogram) {
+          load += elem.first;
+          function += elem.second;
+          fouts << elem.first << ", " << elem.second << "\n";
+        }
+      
+        float avg = load/function;
+        fouts <<"avg"<<", "<<avg<<"\n";
+        float perc = (avg * 100)/instructionF;
+        fouts <<"perc"<<", "<<perc<<"\n";
+        fouts.close();
+      }
+
       OutputFilename = EmitPassWithExtractInfoPath + "/summaryOtherInstsPerFunctionHistogram.csv";
       outs() << "Writing to " << OutputFilename << "\n";
       fouts.open(OutputFilename.c_str());
@@ -251,7 +272,10 @@ public:
           function += elem.second;
           fouts << elem.first << ", " << elem.second << "\n";
         }
-        fouts <<"avg"<<", "<<(other/function)<<"\n";
+        float avg = other/function;
+        fouts <<"avg"<<", "<<avg<<"\n";
+        float perc = (avg * 100)/instructionF;
+        fouts <<"perc"<<", "<<perc<<"\n";
         fouts.close();
       }
       OutputFilename = EmitPassWithExtractInfoPath + "/summaryStatFunctionHistogram.csv";
@@ -275,6 +299,9 @@ public:
   std::map<int,int> GloballoadPerFunctionHistogram;
   std::map<int,int> GlobalOtherPerFunctionHistogram;
   int numFunctions = 0;
+  float instructionBB = 0.0;
+  float instructionF = 0.0;
+
   void getAnalysisUsage(AnalysisUsage &AU) const override {
 
 
