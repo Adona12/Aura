@@ -70,4 +70,8 @@ do
         #  load=$i;store=$i;nop=0; llc memcached.bc --enable-emit-pass-with-extract-info --emit-and-extract-same-load-insts-ratio=${load} --emit-and-extract-same-store-insts-ratio=${store} --emit-and-extract-nop=${nop} --emit-pass-with-extract-info-path=${afterBothLoadAndStore} -o memcachedLoadAndStoreAfter_$i.o -filetype=obj
         cd ../..;
     done
+<<<<<<< HEAD
 done 
+=======
+done 
+>>>>>>> 7e355cbd47c2eaa312d5916c00e144ece8f82d72

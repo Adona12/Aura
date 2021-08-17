@@ -1,1 +1,0 @@
-sudo: perf: command not found
