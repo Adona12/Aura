@@ -1,0 +1,100 @@
+[WARN]  Running against a source checkout. In order to get our runtime dependencies we'll have to invoke Maven. Depending on the state of your system, this may take ~30-45 seconds
+[DEBUG]  Running 'mvn -pl site.ycsb:memcached-binding -am package -DskipTests dependency:build-classpath -DincludeScope=compile -Dmdep.outputFilterFile=true'
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (file:/usr/share/maven/lib/guice.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+java -cp /proj/proxyweb-PG0/adona/YCSB/memcached/conf:/proj/proxyweb-PG0/adona/YCSB/memcached/target/memcached-binding-0.18.0-SNAPSHOT.jar:/root/.m2/repository/org/apache/htrace/htrace-core4/4.1.0-incubating/htrace-core4-4.1.0-incubating.jar:/root/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.4/HdrHistogram-2.1.4.jar:/root/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/root/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar:/root/.m2/repository/net/spy/spymemcached/2.11.4/spymemcached-2.11.4.jar:/root/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.4/jackson-core-asl-1.9.4.jar:/proj/proxyweb-PG0/adona/YCSB/core/target/core-0.18.0-SNAPSHOT.jar site.ycsb.Client -db site.ycsb.db.MemcachedClient -threads 16 -s -P workloads/workloadd -p memcached.hosts=127.0.0.1:11211 -t
+Command line: -db site.ycsb.db.MemcachedClient -threads 16 -s -P workloads/workloadd -p memcached.hosts=127.0.0.1:11211 -t
+YCSB Client 0.18.0-SNAPSHOT
+
+Loading workload...
+log4j:WARN No appenders could be found for logger (org.apache.htrace.core.Tracer).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Starting test.
+2021-08-21 04:16:12:585 0 sec: 0 operations; est completion in 0 second 
+2021-08-21 04:16:12.673 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2021-08-21 04:16:12.674 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2021-08-21 04:16:12.673 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2021-08-21 04:16:12.673 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2021-08-21 04:16:12.673 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2021-08-21 04:16:12.675 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2021-08-21 04:16:12.674 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2021-08-21 04:16:12.675 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2021-08-21 04:16:12.676 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2021-08-21 04:16:12.676 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2021-08-21 04:16:12.678 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2021-08-21 04:16:12.678 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2021-08-21 04:16:12.678 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2021-08-21 04:16:12.679 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2021-08-21 04:16:12.679 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2021-08-21 04:16:12.679 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2021-08-21 04:16:12.759 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-21 04:16:12.760 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-21 04:16:12.761 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-21 04:16:12.763 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-21 04:16:12.764 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-21 04:16:12.764 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-21 04:16:12.767 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-21 04:16:12.768 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-21 04:16:12.768 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-21 04:16:12.770 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-21 04:16:12.771 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-21 04:16:12.772 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-21 04:16:12.773 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-21 04:16:12.774 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-21 04:16:12.775 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-21 04:16:12.775 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2021-08-21 04:16:12:775 0 sec: 1000 operations; 5235.6 current ops/sec; [READ: Count=952, Max=20495, Min=178, Avg=1095.13, 90=1687, 99=19343, 99.9=20495, 99.99=20495] [CLEANUP: Count=16, Max=2891, Min=568, Avg=1198.44, 90=1997, 99=2891, 99.9=2891, 99.99=2891] [INSERT: Count=0, Max=0, Min=9223372036854775807, Avg=NaN, 90=0, 99=0, 99.9=0, 99.99=0] [INSERT-FAILED: Count=48, Max=26767, Min=352, Avg=1806.58, 90=2269, 99=26767, 99.9=26767, 99.99=26767] 
+[OVERALL], RunTime(ms), 191
+[OVERALL], Throughput(ops/sec), 5235.602094240838
+[TOTAL_GCS_G1_Young_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.0
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 0
+[TOTAL_GC_TIME], Time(ms), 0
+[TOTAL_GC_TIME_%], Time(%), 0.0
+[READ], Operations, 952
+[READ], AverageLatency(us), 1095.126050420168
+[READ], MinLatency(us), 178
+[READ], MaxLatency(us), 20495
+[READ], 95thPercentileLatency(us), 2223
+[READ], 99thPercentileLatency(us), 19343
+[READ], Return=OK, 952
+[CLEANUP], Operations, 16
+[CLEANUP], AverageLatency(us), 1198.4375
+[CLEANUP], MinLatency(us), 568
+[CLEANUP], MaxLatency(us), 2891
+[CLEANUP], 95thPercentileLatency(us), 2715
+[CLEANUP], 99thPercentileLatency(us), 2891
+[INSERT], Operations, 0
+[INSERT], AverageLatency(us), NaN
+[INSERT], MinLatency(us), 9223372036854775807
+[INSERT], MaxLatency(us), 0
+[INSERT], 95thPercentileLatency(us), 0
+[INSERT], 99thPercentileLatency(us), 0
+[INSERT], Return=ERROR, 48
+[INSERT-FAILED], Operations, 48
+[INSERT-FAILED], AverageLatency(us), 1806.5833333333333
+[INSERT-FAILED], MinLatency(us), 352
+[INSERT-FAILED], MaxLatency(us), 26767
+[INSERT-FAILED], 95thPercentileLatency(us), 2753
+[INSERT-FAILED], 99thPercentileLatency(us), 26767
+
+ Performance counter stats for 'system wide':
+
+       23693824933      cycles                                                        (66.68%)
+        5512419795      branches                                                      (66.68%)
+         146792971      branch-misses             #    2.66% of all branches          (66.68%)
+        5446857843      branch-loads                                                  (66.68%)
+         145770868      branch-load-misses                                            (66.64%)
+         180784742      L1-icache-load-misses                                         (66.64%)
+
+       6.002676094 seconds time elapsed
+

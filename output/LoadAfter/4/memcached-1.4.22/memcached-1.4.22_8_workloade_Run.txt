@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "./bin/ycsb", line 23, in <module>
+    import shlex
+  File "/usr/lib/python2.7/shlex.py", line 12, in <module>
+    from collections import deque
+  File "/usr/lib/python2.7/collections.py", line 24, in <module>
+    import heapq as _heapq
+  File "/usr/lib/python2.7/heapq.py", line 132, in <module>
+    from itertools import islice, count, imap, izip, tee, chain
+KeyboardInterrupt
+
+ Performance counter stats for 'system wide':
+
+           3923302      cycles                                                        (57.62%)
+            132705      branches                                                      (57.66%)
+             24592      branch-misses             #   18.53% of all branches          (65.78%)
+            241843      branch-loads                                                  (76.33%)
+             28843      branch-load-misses                                            (76.76%)
+             84704      L1-icache-load-misses                                         (66.25%)
+
+       0.037927216 seconds time elapsed
+
