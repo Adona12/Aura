@@ -70,7 +70,7 @@ using namespace std;
 static cl::opt<bool>
     EnableEmitPassWithExtractInfo("enable-emit-pass-with-extract-info",
                  cl::desc("Whether to enable instruction emit pass with extract info pass or not"),
-                 cl::init(false), cl::NotHidden);
+                 cl::init(true), cl::NotHidden);
 // Option to allow this optimization pass to have fine-grained control.
 static cl::opt<int>
      EmitAndExtractSameLoadInstsRatio("emit-and-extract-same-load-insts-ratio",
@@ -140,7 +140,6 @@ public:
         }
         instructionBB = instructions/bb;
         fouts <<"avg"<<", "<<instructionBB<<"\n";
-        
         fouts.close();
       }
       OutputFilename = EmitPassWithExtractInfoPath + "/summaryStorePerBBHistogram.csv";
@@ -526,6 +525,7 @@ public:
             if(EmitAndExtractNop) {
               printOperands(MI, 1);
               NewMI = tryNoop(MI);
+              otherPerBasicBlock++;
             }
             else {
               printOperands(MI,2);
@@ -535,9 +535,10 @@ public:
 //                outs() << "destructive load instruction " << MI <<"emmited in Func " << MF.getName() << "\n";
 //              }
 //              NewMI = &(MF.CloneMachineInstrBundle(MBB, it, *MI));
+            loadsPerBasicBlock++;
             }
             MBB.insert(it, NewMI);
-            loadsPerBasicBlock++;
+            
             instructionsPerBasicBlock++;
           }
         }
@@ -555,13 +556,15 @@ public:
             if(EmitAndExtractNop) {
               printOperands(MI,3);
               NewMI = tryNoop(MI);
+              otherPerBasicBlock++;
             }
             else {
               printOperands(MI,4);
               NewMI = MF.CloneMachineInstr(MI);
+              storesPerBasicBlock++;
             }
             MBB.insert(it, NewMI);
-            storesPerBasicBlock++;
+
             instructionsPerBasicBlock++;
           }
         }
