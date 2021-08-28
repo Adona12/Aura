@@ -6,7 +6,7 @@ import numpy as np
 
 
 releases = [  "1.4.22" , "1.4.30",  "1.5.12" , "1.5.20" , "1.6.9" ]
-categories = ["before" ]# "LoadAfter" ,"StoreAfter"]#, "NopAfter","LoadAndStoreAfter"  ]
+categories = ["WithBranch" ]# "LoadAfter" ,"StoreAfter"]#, "NopAfter","LoadAndStoreAfter"  ]
 values = ["2", "4", "8"]
 
 
@@ -69,22 +69,22 @@ for category in categories:
                 labelEight= "Nop = 8"
 
                 #only for non with branch
-            if(category == "before"):
-                width = 0.5
-                rects1 = ax.bar((x)-width,before, width, color="#993366")
-            elif(category != "withBranch"):
-                rects1 = ax.bar((x - width/2)-width,before, width, color="#365367",label='Before Pass')
-                rects2 = ax.bar(x - width/2, two, width,color="#FFBAA2", label=labelTwo)
-                rects3 = ax.bar(x + width/2, four, width,color="#993366", label=labelFour)
-                rects4 = ax.bar((x + width/2)+width, eight, width,color="#F494AB", label=labelEight)
+            # if(category == "before"):
+            #     width = 0.5
+            #     rects1 = ax.bar((x)-width,before, width, color="#993366")
+            # elif(category != "withBranch"):
+            #     rects1 = ax.bar((x - width/2)-width,before, width, color="#365367",label='Before Pass')
+            #     rects2 = ax.bar(x - width/2, two, width,color="#FFBAA2", label=labelTwo)
+            #     rects3 = ax.bar(x + width/2, four, width,color="#993366", label=labelFour)
+            #     rects4 = ax.bar((x + width/2)+width, eight, width,color="#F494AB", label=labelEight)
             
             # only for with branch
-            # rects2 = ax.bar(x - width/2, before, width,color="#FFBAA2", label=labelTwo)
-            # rects3 = ax.bar(x + width/2, withBranch, width,color="#993366", label=labelFour)
+            rects2 = ax.bar(x - width/2, before, width,color="#FFBAA2", label=labelTwo)
+            rects3 = ax.bar(x + width/2, withBranch, width,color="#993366", label=labelFour)
             
       
 
-            ax.set_title(scat)
+            ax.set_title(scat +"  VS version")
             ax.set_xticks(x)
             ax.set_xticklabels(releases)
             ax.legend()
